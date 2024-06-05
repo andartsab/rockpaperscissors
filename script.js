@@ -2,7 +2,10 @@ let p1 = true
 let p2 = false
 let p1c = null
 let p2c = null
-let tc = 0
+let sp1 = 0
+let sp2 = 0
+let sp11 = document.querySelector(".sp1")
+let sp22 = document.querySelector(".sp2")
 let p1s = document.querySelector(".choice-player-1")
 let p2s = document.querySelector(".choice-player-2")
 let u = "Игрок 1 ходит!"
@@ -96,36 +99,59 @@ let finish = function(){
 	if (p1c == "камень" && p2c == "камень") {
 		u = "Ничья!"
         uu.innerHTML = u
+        sp1 = sp1 + 1
+        sp2 = sp2 + 1
+        sp11.innerHTML = "Очки: " + sp1
+        sp22.innerHTML = "Очки: " + sp2
 	} else if (p1c == "ножницы" && p2c == "камень") {
 		u = "Игрок 2 победил!"
         uu.innerHTML = u
+        sp2 = sp2 + 1
+        sp22.innerHTML = "Очки: " + sp2
 	} else if (p2c == "ножницы" && p1c == "камень") {
 		u = "Игрок 1 победил!"
         uu.innerHTML = u
+        sp1 = sp1 + 1
+        sp11.innerHTML = "Очки: " + sp1
 	} else if (p1c == "ножницы" && p2c == "ножницы") {
 		u = "Ничья!"
         uu.innerHTML = u
+        sp1 = sp1 + 1
+        sp2 = sp2 + 1
+        sp11.innerHTML = "Очки: " + sp1
+        sp22.innerHTML = "Очки: " + sp2
 	} else if (p1c == "бумага" && p2c == "ножницы") {
 		u = "Игрок 2 победил!"
         uu.innerHTML = u
+        sp2 = sp2 + 1
+        sp22.innerHTML = "Очки: " + sp2
 	} else if (p2c == "бумага" && p1c == "ножницы") {
 		u = "Игрок 1 победил!"
         uu.innerHTML = u
+        sp1 = sp1 + 1
+        sp11.innerHTML = "Очки: " + sp1
 	} else if (p1c == "бумага" && p2c == "бумага") {
 		u = "Ничья!"
         uu.innerHTML = u
+        sp1 = sp1 + 1
+        sp2 = sp2 + 1
+        sp11.innerHTML = "Очки: " + sp1
+        sp22.innerHTML = "Очки: " + sp2
 	} else if (p1c == "камень" && p2c == "бумага") {
 		u = "Игрок 2 победил!"
         uu.innerHTML = u
+        sp2 = sp2 + 1
+        sp22.innerHTML = "Очки: " + sp2
 	} else if (p2c == "камень" && p1c == "бумага") {
 		u = "Игрок 1 победил!"
         uu.innerHTML = u
+        sp1 = sp1 + 1
+        sp11.innerHTML = "Очки: " + sp1
 	}
 }
 let reset = function(){
 	p1 = true
 	p2 = false
-	tc = tc + 1
 	u = "Игрок 1 ходит!"
     uu.innerHTML = u
     p1s.style.backgroundImage = ""
